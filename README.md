@@ -8,7 +8,7 @@
 
 [**下载最新构建（Release）**](https://github.com/tianyi667/death-and-life/releases/latest)
 
-把 `sheng-si-ju-v0.2.exe` 和 `sheng-si-ju-v0.2.pck` 下载到**同一个文件夹**，双击 exe 即可运行（无需安装 Godot）。
+把 `death-and-life-v0.2.exe` 和 `death-and-life-v0.2.pck` 下载到**同一个文件夹**，双击 exe 即可运行（无需安装 Godot）。
 
 
 ## 玩法
