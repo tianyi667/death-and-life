@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://byct0qvpqsqb3"]
+
+[ext_resource type="Script" uid="uid://deanrjkyqbsng" path="res://scripts/date/card_ui.gd" id="1_e1hm3"]
+[ext_resource type="Theme" uid="uid://lay3uk86eee6" path="res://new_theme.tres" id="2_birkm"]
+
+[node name="CardUi" type="TextureButton" unique_id=934145687]
+texture_filter = 1
+custom_minimum_size = Vector2(120, 160)
+size_flags_horizontal = 0
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("1_e1hm3")
+
+[node name="TextLabel" type="Label" parent="." unique_id=2141541810]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_birkm")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

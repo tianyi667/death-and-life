@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://nr2lmruv12hf"]
+
+[ext_resource type="Texture2D" uid="uid://bk8h2ohnjqk87" path="res://资源/1793812602480.png" id="1_m6e0p"]
+[ext_resource type="Script" uid="uid://cjpj8kqml0oc0" path="res://ui/ui.gd" id="1_wl5ax"]
+[ext_resource type="Theme" uid="uid://lay3uk86eee6" path="res://new_theme.tres" id="2_27fn8"]
+
+[node name="Ui" type="Control" unique_id=927134510]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wl5ax")
+
+[node name="ui_1" type="Sprite2D" parent="." unique_id=1101125137]
+position = Vector2(321.00003, 181.00003)
+scale = Vector2(0.22542137, 0.22500002)
+texture = ExtResource("1_m6e0p")
+
+[node name="Button" type="Button" parent="." unique_id=140840547]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 225.0
+offset_right = 184.0
+offset_bottom = 275.0
+theme = ExtResource("2_27fn8")
+text = "begin game"
+
+[node name="Button2" type="Button" parent="." unique_id=1004980491]
+layout_mode = 0
+offset_top = 273.0
+offset_right = 181.0
+offset_bottom = 319.0
+theme = ExtResource("2_27fn8")
+text = "setting"
+
+[node name="Button3" type="Button" parent="." unique_id=2124859828]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 318.0
+offset_right = 182.0
+offset_bottom = 364.0
+theme = ExtResource("2_27fn8")
+text = "game over"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

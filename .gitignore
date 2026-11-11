@@ -1,0 +1,19 @@
+# Godot 4
+.godot/
+android/
+
+# 构建产物
+demo/
+build/
+*.exe
+*.pck
+
+# AI 原始素材（体积大，不进仓库）
+ai素材/
+可删测试/
+test/
+
+# 编辑器临时文件
+*.tmp
+*.tmp.*
+.DS_Store

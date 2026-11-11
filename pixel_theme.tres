@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3]
+
+[ext_resource type="FontFile" uid="uid://w6v756vjswwp" path="res://资源/缝合怪像素字体/fusion-pixel-12px-proportional.ttf" id="1_font"]
+
+[resource]
+default_font = ExtResource("1_font")
+default_font_size = 12

@@ -1,0 +1,189 @@
+[gd_scene format=3 uid="uid://bcfsshb8qxeu"]
+
+[ext_resource type="Script" path="res://scripts/battle/battle_flow.gd" id="1_flow"]
+[ext_resource type="Script" path="res://scripts/battle/hand_controller.gd" id="2_hand"]
+[ext_resource type="Script" path="res://scripts/battle/played_slots.gd" id="3_slots"]
+[ext_resource type="Script" path="res://scripts/battle/battle_hud.gd" id="4_hud"]
+[ext_resource type="Script" path="res://scripts/battle/release_zone.gd" id="5_zone"]
+[ext_resource type="Theme" path="res://pixel_theme.tres" id="6_theme"]
+[ext_resource type="Texture2D" path="res://art/pixel/char_hero.png" id="7_hero"]
+[ext_resource type="Texture2D" path="res://art/pixel/char_guard.png" id="8_guard"]
+[ext_resource type="Script" path="res://scripts/battle/screen_shake.gd" id="9_shake"]
+
+[node name="Battle" type="Node2D"]
+script = ExtResource("1_flow")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(320, 180)
+enabled = true
+script = ExtResource("9_shake")
+
+[node name="BattleField" type="Node2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="BattleField"]
+position = Vector2(-16, -9)
+scale = Vector2(1.05, 1.05)
+centered = false
+texture_filter = 1
+
+[node name="PlayerSprite" type="Sprite2D" parent="BattleField"]
+position = Vector2(240, 250)
+texture_filter = 1
+texture = ExtResource("7_hero")
+
+[node name="EnemySprite" type="Sprite2D" parent="BattleField"]
+position = Vector2(400, 250)
+texture_filter = 1
+texture = ExtResource("8_guard")
+
+[node name="ReleaseZone" type="Node2D" parent="BattleField"]
+position = Vector2(60, 70)
+script = ExtResource("5_zone")
+
+[node name="Hud" type="CanvasLayer" parent="."]
+
+[node name="HudRoot" type="Control" parent="Hud"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="HandContainer" type="Control" parent="Hud/HudRoot"]
+offset_left = 70.0
+offset_top = 250.0
+offset_right = 570.0
+offset_bottom = 356.0
+script = ExtResource("2_hand")
+
+[node name="PlayedSlots" type="Control" parent="Hud/HudRoot"]
+mouse_filter = 2
+script = ExtResource("3_slots")
+
+[node name="PlayerSlot" type="Control" parent="Hud/HudRoot/PlayedSlots"]
+offset_left = 212.0
+offset_top = 114.0
+offset_right = 268.0
+offset_bottom = 189.0
+mouse_filter = 2
+
+[node name="EnemySlot" type="Control" parent="Hud/HudRoot/PlayedSlots"]
+offset_left = 372.0
+offset_top = 114.0
+offset_right = 428.0
+offset_bottom = 189.0
+mouse_filter = 2
+
+[node name="HudUI" type="Control" parent="Hud/HudRoot"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme = ExtResource("6_theme")
+script = ExtResource("4_hud")
+
+[node name="HpLabel" type="Label" parent="Hud/HudRoot/HudUI"]
+offset_left = 140.0
+offset_top = 2.0
+offset_right = 500.0
+offset_bottom = 18.0
+horizontal_alignment = 1
+
+[node name="DeathLabel" type="Label" parent="Hud/HudRoot/HudUI"]
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 136.0
+offset_bottom = 18.0
+
+[node name="InfoLabel" type="Label" parent="Hud/HudRoot/HudUI"]
+offset_left = 140.0
+offset_top = 20.0
+offset_right = 500.0
+offset_bottom = 54.0
+horizontal_alignment = 1
+
+[node name="InsightButton" type="Button" parent="Hud/HudRoot/HudUI"]
+offset_left = 564.0
+offset_top = 264.0
+offset_right = 634.0
+offset_bottom = 302.0
+text = "窥见 1"
+
+[node name="EndTurnButton" type="Button" parent="Hud/HudRoot/HudUI"]
+offset_left = 552.0
+offset_top = 310.0
+offset_right = 634.0
+offset_bottom = 350.0
+text = "回合结束"
+disabled = true
+
+[node name="EnemyPoolButton" type="Button" parent="Hud/HudRoot/HudUI"]
+offset_left = 4.0
+offset_top = 338.0
+offset_right = 82.0
+offset_bottom = 356.0
+text = "敌方牌库"
+
+[node name="PlayerPoolButton" type="Button" parent="Hud/HudRoot/HudUI"]
+offset_left = 86.0
+offset_top = 338.0
+offset_right = 164.0
+offset_bottom = 356.0
+text = "我方牌库"
+
+[node name="InfoPanel" type="Panel" parent="Hud/HudRoot/HudUI"]
+visible = false
+offset_left = 170.0
+offset_top = 70.0
+offset_right = 470.0
+offset_bottom = 290.0
+
+[node name="InfoDetailLabel" type="Label" parent="Hud/HudRoot/HudUI/InfoPanel"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 292.0
+offset_bottom = 212.0
+autowrap_mode = 2
+
+[node name="ClosePanelButton" type="Button" parent="Hud/HudRoot/HudUI/InfoPanel"]
+offset_left = 218.0
+offset_top = 190.0
+offset_right = 294.0
+offset_bottom = 214.0
+text = "关闭"
+
+[node name="ResultPanel" type="Panel" parent="Hud/HudRoot/HudUI"]
+visible = false
+offset_left = 130.0
+offset_top = 85.0
+offset_right = 510.0
+offset_bottom = 275.0
+
+[node name="ResultTitle" type="Label" parent="Hud/HudRoot/HudUI/ResultPanel"]
+offset_left = 0.0
+offset_top = 24.0
+offset_right = 380.0
+offset_bottom = 64.0
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="Hud/HudRoot/HudUI/ResultPanel"]
+offset_left = 24.0
+offset_top = 130.0
+offset_right = 124.0
+offset_bottom = 170.0
+text = "再来一局"
+
+[node name="MenuButton" type="Button" parent="Hud/HudRoot/HudUI/ResultPanel"]
+offset_left = 140.0
+offset_top = 130.0
+offset_right = 240.0
+offset_bottom = 170.0
+text = "返回主界面"
+
+[node name="NextButton" type="Button" parent="Hud/HudRoot/HudUI/ResultPanel"]
+offset_left = 256.0
+offset_top = 130.0
+offset_right = 356.0
+offset_bottom = 170.0
+text = "下一关"

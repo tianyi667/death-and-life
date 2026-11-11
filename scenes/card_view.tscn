@@ -1,0 +1,27 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/battle/card_view.gd" id="1_cv"]
+[ext_resource type="Theme" path="res://pixel_theme.tres" id="2_theme"]
+
+[node name="CardView" type="TextureButton"]
+custom_minimum_size = Vector2(72, 96)
+ignore_texture_size = true
+stretch_mode = 5
+texture_filter = 1
+theme = ExtResource("2_theme")
+script = ExtResource("1_cv")
+
+[node name="TextLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+horizontal_alignment = 1
+vertical_alignment = 0
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
