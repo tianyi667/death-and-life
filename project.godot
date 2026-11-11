@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="生死局1"
+config/name="生死局 · Death and Life"
 run/main_scene="uid://nr2lmruv12hf"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 
