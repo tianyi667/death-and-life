@@ -1,4 +1,4 @@
-# 生死局（Sheng Si Ju）
+# 生死局 · Death and Life
 
 一款 2D 卡牌对弈游戏（Godot 4.7 / GDScript），暗黑民俗志怪题材的像素风格。
 
@@ -6,7 +6,7 @@
 
 ## 下载试玩
 
-[**下载最新构建（Release）**](https://github.com/tianyi667/sheng-si-ju/releases/latest)
+[**下载最新构建（Release）**](https://github.com/tianyi667/death-and-life/releases/latest)
 
 把 `sheng-si-ju-v0.2.exe` 和 `sheng-si-ju-v0.2.pck` 下载到**同一个文件夹**，双击 exe 即可运行（无需安装 Godot）。
 
