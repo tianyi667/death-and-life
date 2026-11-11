@@ -4,6 +4,13 @@
 
 > 绳、石、刀、枪、生、死 —— 六种牌的对弈。
 
+## 下载试玩
+
+[**下载最新构建（Release）**](https://github.com/tianyi667/sheng-si-ju/releases/latest)
+
+把 `sheng-si-ju-v0.2.exe` 和 `sheng-si-ju-v0.2.pck` 下载到**同一个文件夹**，双击 exe 即可运行（无需安装 Godot）。
+
+
 ## 玩法
 
 - 每回合从手牌中**拖一张牌到屏幕中央的释放平面**，牌会悬在角色头顶
